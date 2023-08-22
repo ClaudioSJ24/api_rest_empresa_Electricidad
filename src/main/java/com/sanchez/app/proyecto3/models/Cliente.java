@@ -19,7 +19,7 @@ public class Cliente extends Persona {
                 fetch = FetchType.LAZY,
                 cascade = CascadeType.ALL
                 )
-    private Set<Trabajador> trabajadores;
+    private List<Trabajador> trabajadores;
 
     public Cliente(Long id, String name, String apellidoP, String apellidoM, String telefono, Float totalPagar, Direccion direccion) {
         super(id, name, apellidoP, apellidoM, telefono, direccion);
@@ -35,5 +35,13 @@ public class Cliente extends Persona {
 
     public void setTotalPagar(Float totalPagar) {
         this.totalPagar = totalPagar;
+    }
+
+    public List<Trabajador> getTrabajadores() {
+        return trabajadores;
+    }
+
+    public void setTrabajadores(List<Trabajador> trabajadores) {
+        this.trabajadores = trabajadores;
     }
 }
